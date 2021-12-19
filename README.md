@@ -1,2 +1,2 @@
 # react-portfolio
-portfolio theme web application made by react and laravel
+frontside portfolio theme web application made by react and laravel
