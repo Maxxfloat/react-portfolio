@@ -12,21 +12,22 @@ const SidebarToggleBtn: React.FC<SidebarOpen> = ({
   setSidebarOpen,
 }) => {
   const Transition = useTransition(sidebarOpen, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
+    from: { opacity: 1 },
+    enter: { opacity: 1, delay: 300 },
     leave: { opacity: 0 },
-    config: { duration: 1000 },
-    reverse: sidebarOpen,
+    config: { duration: 300 },
   });
-
   const handleSidebarToggleIcon = () => {
     const MyIoMdClose = animated(IoMdClose);
     const MyFiMenu = animated(FiMenu);
     return Transition((style, item) =>
       item ? (
-        <MyIoMdClose className="w-full h-full text-white" style={style} />
+        <MyIoMdClose
+          className="absolute w-full h-full text-white"
+          style={style}
+        />
       ) : (
-        <MyFiMenu className="w-4/5 text-white h-4/5" style={style} />
+        <MyFiMenu className="absolute w-4/5 text-white h-4/5" style={style} />
       )
     );
   };
@@ -37,7 +38,6 @@ const SidebarToggleBtn: React.FC<SidebarOpen> = ({
         " fixed flex items-center justify-center w-12 h-12 bg-gray-800 rounded-sm lg:hidden top-6 right-6 text-white"
       }
       onClick={() => {
-        console.log(sidebarOpen + " animation clicked");
         setSidebarOpen((value) => !value);
       }}
     >
