@@ -35,7 +35,7 @@ const SidebarToggleBtn: React.FC<SidebarOpen> = ({
   return (
     <div
       className={
-        " fixed flex items-center justify-center w-12 h-12 bg-gray-800 rounded-sm lg:hidden top-6 right-6 text-white"
+        " fixed flex items-center justify-center w-12 h-12 bg-gray-800 rounded-sm lg:hidden top-6 right-6 text-white z-10"
       }
       onClick={() => {
         setSidebarOpen((value) => !value);
